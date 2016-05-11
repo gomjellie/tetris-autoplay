@@ -19,7 +19,7 @@
 #define Y_LEN 30 //25
 
 const int SPEED=1000;
-const int AISPEED=22;//25000 , 2000
+const int AISPEED=0;//25000 , 2000
 int INDEX=0;
 int AIINDEX=0;
 int SCORE=0;
