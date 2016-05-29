@@ -127,7 +127,7 @@ void animationeffect(double par){
 	writeBlockOnBoard();
 	drawInsideGame();
 	eraseBlockOffBoard();
-	usleep(AISPEED*par);
+	//usleep(AISPEED*par);
 }
 
 void moveBestPos(Pos bestPosition, char *nxt){
