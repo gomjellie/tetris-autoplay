@@ -231,6 +231,7 @@ void initGame(void){
 	cbreak();//curses.h
 	keypad(stdscr, TRUE);//curses.h
 	noecho();//curses.h
+	curs_set(0);// hide curs on linux option
 	clear();
 	srand((unsigned int)time(NULL));
 	int x=0,y=0;
