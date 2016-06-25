@@ -600,7 +600,7 @@ Pos findIdealPosition(void){
 			BIT_Y--;
 			writeBlockOnBoard();
 			plusScore=4*getIdealPoint()+5*getClearLinePoint()+5*getAdjacentPoint();
-			minusScore=17*getMinusPoint();
+			minusScore=16*getMinusPoint();
 			totalScore=plusScore-minusScore;
 			eraseBlockOffBoard();
 
