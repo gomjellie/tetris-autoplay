@@ -24,13 +24,13 @@ int INDEX=0;
 int AIINDEX=0;
 int SCORE=0;
 char COLOUR[7][4]={
-	"▢",
-	"※",
-	"▣",
-	"▩",
-	"★",
-	"◎",
-	"そ"
+	"M",
+	"#",
+	"$",
+	"%",
+	"&",
+	"K",
+	"P"
 };
 int BOARD_ARR[Y_LEN][X_LEN]={EMPTY,};
 const int _BLOCK_ARR[7][4][4]={
@@ -127,7 +127,7 @@ void animationeffect(double par){
 	writeBlockOnBoard();
 	drawInsideGame();
 	eraseBlockOffBoard();
-	usleep(AISPEED*par);
+	//usleep(AISPEED*par);
 }
 
 void moveBestPos(Pos bestPosition, char *nxt){
@@ -256,7 +256,7 @@ void drawBoarder(void){
 			}
 		}
 	}
-	gotoXY(4,2);printf("Oh inkyu SmartSystemsSoftware");
+	gotoXY(4,2);printf("https://github.com/gomjellie");
 }
 
 char getNextMove(void){
@@ -275,7 +275,7 @@ char getNextMove(void){
 				//근데 안넣으면 벽에 흘러내려감
 				break;
 			}
-			usleep(100);
+			//usleep(100);
 		}
 	}
 	switch(key){
