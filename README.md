@@ -8,7 +8,8 @@ https://goo.gl/BYFwxj
 
 most files are trash except tetris.c
 
-GUIDE FOR LINUX
+#GUIDE FOR LINUX
+
 ```js
 
 1. install ncurses library : sudo apt-get install libncurses5-dev
@@ -21,9 +22,9 @@ GUIDE FOR LINUX
 
 ```
 
-```js
-GUIDE FOR MAC OSX
+#GUIDE FOR MAC OSX
 
+```js
 1. open terminal
 
 2. find directory
