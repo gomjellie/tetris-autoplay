@@ -1,4 +1,4 @@
-# console-tetris-for-osX
+# unix-tetris-autoplay
 
 fast version youtube link
 https://goo.gl/WyKxK3 
@@ -9,6 +9,7 @@ https://goo.gl/BYFwxj
 most files are trash except tetris.c
 
 GUIDE FOR LINUX
+```js
 
 1. install ncurses library : sudo apt-get install libncurses5-dev
 
@@ -18,6 +19,9 @@ GUIDE FOR LINUX
 
 4. run : ./tetris
 
+```
+
+```js
 GUIDE FOR MAC OSX
 
 1. open terminal
@@ -27,3 +31,5 @@ GUIDE FOR MAC OSX
 3. type : gcc -o tetris tetris.c -lcurses
 
 4. run : ./tetris
+
+```
