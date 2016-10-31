@@ -1,5 +1,9 @@
 # unix-tetris-autoplay
 
+[![](https://img.shields.io/badge/platform-OSX%20|%20Linux%20|%20Windows-ff69b4.svg?style=flat-square)][release]
+[![](http://img.shields.io/github/release/gomjellie/tetris-autoplay.svg?style=flat-square)][release]
+[![](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
+
 fast version youtube link
 https://goo.gl/WyKxK3 
 
