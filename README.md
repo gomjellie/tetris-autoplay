@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/platform-OSX%20|%20Linux%20|%20Windows-ff69b4.svg?style=flat-square)
 ![](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
-[![i-license]](/LICENSE)
+
 
 fast version youtube link
 https://goo.gl/WyKxK3 
