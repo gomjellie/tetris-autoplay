@@ -127,7 +127,7 @@ void animationeffect(double par){
 	writeBlockOnBoard();
 	drawInsideGame();
 	eraseBlockOffBoard();
-	//usleep(AISPEED*par);
+	usleep(AISPEED*par);
 }
 
 void moveBestPos(Pos bestPosition, char *nxt){
@@ -275,7 +275,7 @@ char getNextMove(void){
 				//근데 안넣으면 벽에 흘러내려감
 				break;
 			}
-			//usleep(100);
+			usleep(100);
 		}
 	}
 	switch(key){
