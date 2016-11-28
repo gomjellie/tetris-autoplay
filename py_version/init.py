@@ -16,4 +16,8 @@ if __name__ == '__main__':
     observable.register(input_handler)
     observable.register(view)
     while 1:
-    	observable.update_observers(c = keyBoard.get_ch())
+    	try:
+    	    observable.update_observers(c=keyBoard.get_ch())
+    	except KeyboardInterrupt:
+    	    curses.endwin()
+    	    exit()
