@@ -1,27 +1,6 @@
 from observer import Observer
-from abc import ABCMeta
-from abc import abstractmethod
-
-class Command(metaclass=ABCMeta):
-    @abstractmethod
-    def execute(self):
-    	pass
-
-class Command_Right(Command):
-    def execute(self):
-    	print('right')
-
-class Command_Left(Command):
-    def execute(self):
-    	print('left')
-
-class Command_Up(Command):
-    def execute(self):
-    	print('up')
-
-class Command_Down(Command):
-    def execute(self):
-    	print('down')
+from command import *
+from block import Block
 
 class InputHandler(Observer):
     def __init__(self):
@@ -30,15 +9,16 @@ class InputHandler(Observer):
         self.button_up = Command_Up()
         self.button_down = Command_Down()
         self.c = 0
+        self.block = Block()
     def handle_input(self, key):
         if key == 'right':
-            self.button_right.execute()
+            self.button_right.execute(self.block)
         elif key == 'left':
-            self.button_left.execute()
+            self.button_left.execute(self.block)
         elif key == 'down':
-            self.button_down.execute()
+            self.button_down.execute(self.block)
         elif key == 'up':
-            self.button_up.execute()
+            self.button_up.execute(self.block)
         else :
             print('unexpected button pressed')
     def update(self, *args, **kwargs):

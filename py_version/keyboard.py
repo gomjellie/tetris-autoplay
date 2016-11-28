@@ -35,11 +35,10 @@ class KeyBoard(object):
                 key_in = 'down'
             else:
                 key_in = None
-            if self.c is not None and key_in is not None:
-                self.stdscr.addstr(' ' + str(self.c) + ' ' + key_in)
-                self.stdscr.refresh()
-                self.stdscr.move(0, 0)
+#            if self.c is not None and key_in is not None:
+                #self.stdscr.addstr(' ' + str(self.c) + ' ' + key_in)
+#                self.stdscr.refresh()
+#                self.stdscr.move(0, 0)
             return key_in
         return None
-
 
