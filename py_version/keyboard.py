@@ -11,6 +11,7 @@ class KeyBoard(object):
     DOWN = 66
     RIGHT = 67
     UP = 65
+    SPACE_BAR = 32
     def __init__(self):
     	self.c = 0
     	self.stdscr = curses.initscr()
@@ -33,8 +34,11 @@ class KeyBoard(object):
                 key_in = 'right'
             elif self.c == KeyBoard.DOWN:
                 key_in = 'down'
+            elif self.c == KeyBoard.SPACE_BAR:
+            	key_in = 'space'
             else:
                 key_in = None
+                print('{0}'.format(self.c))
 #            if self.c is not None and key_in is not None:
                 #self.stdscr.addstr(' ' + str(self.c) + ' ' + key_in)
 #                self.stdscr.refresh()

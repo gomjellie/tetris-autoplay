@@ -22,3 +22,6 @@ class Command_Down(Command):
     def execute(self, block):
     	block.move_down()
 
+class Command_Space(Command):
+    def execute(self, block):
+    	block.move_bottom()

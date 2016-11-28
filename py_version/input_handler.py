@@ -8,6 +8,7 @@ class InputHandler(Observer):
         self.button_right = Command_Right()
         self.button_up = Command_Up()
         self.button_down = Command_Down()
+        self.button_space = Command_Space()
         self.c = 0
         self.block = Block()
     def handle_input(self, key):
@@ -19,6 +20,8 @@ class InputHandler(Observer):
             self.button_down.execute(self.block)
         elif key == 'up':
             self.button_up.execute(self.block)
+        elif key == 'space':
+            self.button_space.execute(self.block)
         else :
             print('unexpected button pressed')
     def update(self, *args, **kwargs):

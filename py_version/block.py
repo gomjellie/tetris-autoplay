@@ -17,3 +17,6 @@ class Block(Movable):
     def move_up(self):
     	print('move up')
 
+    def move_bottom(self):
+    	print('move bottom')
+
