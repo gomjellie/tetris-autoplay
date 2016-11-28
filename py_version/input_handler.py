@@ -9,6 +9,7 @@ class InputHandler(Observer):
         self.button_up = Command_Up()
         self.button_down = Command_Down()
         self.button_space = Command_Space()
+
         self.c = 0
         self.block = Block()
     def handle_input(self, key):

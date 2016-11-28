@@ -12,11 +12,9 @@ class KeyBoard(object):
     RIGHT = 67
     UP = 65
     SPACE_BAR = 32
-    def __init__(self):
+    def __init__(self, screen):
     	self.c = 0
-    	self.stdscr = curses.initscr()
-    	curses.noecho()
-    	curses.cbreak()
+    	self.stdscr = screen
     	self.stdscr.nodelay(1)
     	
     def get_ch(self):
@@ -38,7 +36,7 @@ class KeyBoard(object):
             	key_in = 'space'
             else:
                 key_in = None
-                print('{0}'.format(self.c))
+                #print('{0}'.format(self.c))
 #            if self.c is not None and key_in is not None:
                 #self.stdscr.addstr(' ' + str(self.c) + ' ' + key_in)
 #                self.stdscr.refresh()
