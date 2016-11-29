@@ -1,9 +1,11 @@
 from movable import Movable
+from board import Board
 
 class Block(Movable):
     def __init__(self):
-    	self.x = 0
-    	self.y = 0
+    	self.x = Board.X_LENGTH / 2
+    	self.y = Board.Y_LENGTH / 2
+    	self.matrix = [4][4]
     
     def move_right(self):
     	print('move right')
