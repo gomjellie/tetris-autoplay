@@ -1,12 +1,16 @@
 # unix-tetris-autoplay
 
-fast version youtube link
+fast version
+
+![tetris auto fast](img/tetris_auto_fast.gif)
+
 https://goo.gl/WyKxK3 
 
-slow version youtube link
-https://goo.gl/BYFwxj 
+slow version
 
-most files are trash except tetris.c
+![tetris auto slow](img/tetris_auto_slow.gif)
+
+https://goo.gl/BYFwxj 
 
 #GUIDE FOR LINUX
 
