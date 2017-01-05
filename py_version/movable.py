@@ -18,3 +18,7 @@ class Movable(metaclass=ABCMeta):
     def move_down():
     	pass
 
+    @abstractmethod
+    def is_movable():
+    	pass
+
