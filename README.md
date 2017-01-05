@@ -1,10 +1,10 @@
 # unix-tetris-autoplay
 
-<a href="https://goo.gl/WyKxK3" target=_blank>fast version</a>
+**<a href="https://goo.gl/WyKxK3" target=_blank>fast version</a>**
 
 ![tetris auto fast](img/tetris_auto_fast.gif)
 
-<a href="https://goo.gl/BYFwxj" target=_blank>slow version</a>
+**<a href="https://goo.gl/BYFwxj" target=_blank>slow version</a>**
  
 
 ![tetris auto slow](img/tetris_auto_slow.gif)
