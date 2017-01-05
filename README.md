@@ -1,16 +1,14 @@
 # unix-tetris-autoplay
 
-fast version
+<a href="https://goo.gl/WyKxK3" target=_blank>fast version</a>
 
 ![tetris auto fast](img/tetris_auto_fast.gif)
 
-https://goo.gl/WyKxK3 
-
-slow version
+<a href="https://goo.gl/BYFwxj" target=_blank>slow version</a>
+ 
 
 ![tetris auto slow](img/tetris_auto_slow.gif)
 
-https://goo.gl/BYFwxj 
 
 #GUIDE FOR LINUX
 
