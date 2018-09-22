@@ -1,18 +1,14 @@
-# unix-tetris-autoplay
-
-**<a href="https://goo.gl/WyKxK3" target=_blank>fast version</a>**
+# tetris-autoplay
 
 ![tetris auto fast](img/tetris_auto_fast.gif)
 
-**<a href="https://goo.gl/BYFwxj" target=_blank>slow version</a>**
- 
 
 ![tetris auto slow](img/tetris_auto_slow.gif)
 
 
 #GUIDE FOR LINUX
 
-```js
+```
 
 1. install ncurses library : sudo apt-get install libncurses5-dev
 
@@ -26,7 +22,7 @@
 
 #GUIDE FOR MAC OSX
 
-```js
+```
 1. open terminal
 
 2. find directory
