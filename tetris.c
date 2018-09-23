@@ -89,7 +89,7 @@ int BIT_X=4,BIT_Y=1;
 int BIT_Z=0;
 
 typedef struct position{
-	int x,y;
+	int x, y;
 	int rotation;
 	int score;
 }Pos;
@@ -98,30 +98,21 @@ enum {LEFT_KEY=1,DOWN_KEY,RIGHT_KEY,UP_KEY,QUIT,SPACE_KEY};
 
 void gotoXY(int x,int y);
 int writeBlockOnBoard(void);
-char getKey(void);
 void eraseBlockOffBoard(void);
 void gotoXY(int x,int y);
 void initGame(void);
 void drawBoarder(void);
 void drawInsideGame(void);
-char getNextMove(void);
 void rotateBlock(void);
 int collision(void);
 void stack(void);
-void moveBit(char ch);
 void gravity(int y);
 int clearLine(void);
-int kbhit(void);
 void indexCheck(void);
 void randomNextBlock(void);
 int getIdealPoint(void);
 Pos findIdealPosition(void);
 int getClearLinePoint(void);
-
-void debugBestPosition(Pos ptr){
-	gotoXY(60,AIINDEX++);
-	printf("%d %d %d %d", ptr.x, ptr.y, ptr.rotation, ptr.score);
-};
 
 void animationeffect(double par){
 	writeBlockOnBoard();
@@ -202,12 +193,6 @@ int writeBlockOnBoard(void){
 	return 0;
 }
 
-char getKey(void){
-	char key[3]={'\0',};
-	key[0]=getchar();
-	return key[0];
-}
-
 void eraseBlockOffBoard(void){
 	int x=0,y=0;
 	for(y=0;y<4;y++){
@@ -259,47 +244,6 @@ void drawBoarder(void){
 	gotoXY(4,2);printf("https://github.com/gomjellie");
 }
 
-char getNextMove(void){
-	char key='\0';
-	char out='\0';
-	int i=0;
-
-	if(kbhit()){
-		key=getKey();
-	}
-	else if(!kbhit()){
-		out=DOWN_KEY;
-		for(i=0;i<SPEED;i++){
-			if(kbhit()){
-				//key=getKey();//넣으면 벽에서 방향키 계속누를때 벽에 붙어서 안내려감
-				//근데 안넣으면 벽에 흘러내려감
-				break;
-			}
-			//usleep(100);
-		}
-	}
-	switch(key){
-/*		case 'H':
-		case 'h':
-			out=LEFT_KEY;break;
-		case 'J':
-		case 'j':
-			out=DOWN_KEY;break;
-		case 'L':
-		case 'l':
-			out=RIGHT_KEY;break;
-		case 'K':
-		case 'k':
-			out=UP_KEY;break; 
-		case ' ':
-			out=SPACE_KEY;break;*/
-		case 'Q':
-		case 'q':
-			out=QUIT;
-	}
-	return out;
-}
-
 void rotateBlock(void){
 	char tmpArr[4][4];
 	int x=0,y=0;
@@ -340,46 +284,6 @@ void stack(void){
 	clearLine();
 }
 
-void moveBit(char ch){
-//	int prevZ=0;
-	switch(ch){
-		case DOWN_KEY:
-			BIT_Y++;
-			if(collision()){
-				stack();
-			}
-			break;
-		case UP_KEY:
-			rotateBlock();
-			if(collision()){
-				rotateBlock();rotateBlock();rotateBlock();
-			}
-			break;
-		case LEFT_KEY:
-			BIT_X--;
-			if(collision()) BIT_X++;
-			break;
-		case RIGHT_KEY:
-			BIT_X++;
-			if(collision())
-				BIT_X--;
-			break;
-		case SPACE_KEY:
-			while(!collision()){
-				BIT_Y++;
-			}
-			BIT_Y--;
-			//stack();
-			break;
-		default:
-			break;
-	}
-//	gotoXY(40,INDEX++);
-//	printf("CURS: %d %02d",BIT_X,BIT_Y);
-	gotoXY(40,INDEX++);
-	printf("SCORE: %d", SCORE);
-}
-
 void gravity(int y) {
 	int x = 1;
 	for (;y >1;y--) {
@@ -408,33 +312,6 @@ int clearLine(void){
 		}
 	}
 		return 0;
-}
-
-int kbhit(void)
-{
-	struct termios oldt, newt;
-	int ch;
-	int oldf;
-
-	tcgetattr(STDIN_FILENO, &oldt);
-	newt = oldt;
-	newt.c_lflag &= ~(ICANON | ECHO);
-	tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-	oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-	fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
-
-	ch = getchar();
-
-	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-	fcntl(STDIN_FILENO, F_SETFL, oldf);
-
-	if(ch != EOF)
-	{
-		ungetc(ch, stdin);
-		return 1;
-	}
-
-	return 0;
 }
 
 void drawInsideGame(void){
