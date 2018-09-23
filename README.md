@@ -20,15 +20,14 @@
 
 ```
 
-#GUIDE FOR MAC OSX
+# GUIDE FOR MAC OS user
 
-```
-1. open terminal
+```sh
 
-2. find directory
+cmake .
 
-3. type : gcc -o tetris tetris.c -lcurses
+make
 
-4. run : ./tetris
+./tetris_autoplay
 
 ```
