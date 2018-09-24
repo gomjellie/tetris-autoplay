@@ -24,20 +24,22 @@ ExternalProject_add(project_curses
 	PREFIX=${curses_PREFIX}
 	BUILD_COMMAND make
 	INSTALL_COMMAND make install
-	#INSTALL_DIR ${curses_INSTALL_DIR}
+	INSTALL_DIR ${curses_INSTALL_DIR}
 )
 
 ExternalProject_Get_Property(project_curses install_dir)
 
 add_library(curses STATIC IMPORTED)
 
-set_property(TARGET curses PROPERTY IMPORTED_LOCATION ${install_dir}/lib/libncurses5)
+set_property(TARGET curses PROPERTY IMPORTED_LOCATION ${curses_INSTALL_DIR}/lib/libncurses.a)
 
 add_dependencies(curses project_curses)
 
 add_executable(tetris_autoplay ${SOURCE_FILES})
 
-include_directories(${install_dir}/include/include/libncurses5)
+include_directories(${install_dir}/include/ncurses/)
+
+include_directories(${curses_PREFIX}/include/)
 
 target_link_libraries(tetris_autoplay curses)
 
