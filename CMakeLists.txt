@@ -2,19 +2,24 @@ cmake_minimum_required(VERSION 3.7)
 project(tetris_autoplay)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "{CMAKE_CXX_FLAGS} -P")
 
 set(SOURCE_FILES
         tetris.c)
 
+set(curses_PREFIX "${CMAKE_CURRENT_BINARY_DIR}/libncurses5")
+set(curses_INSTALL_DIR "${CMAKE_CURRENT_BINARY_DIR}/libncurses5")
+
 # find_package(curses REQUIRED)
 include(ExternalProject)
 ExternalProject_Add(project_curses
-	URL http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_5.9+20140118.orig.tar.gz
-	PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libncurses5
-	CONFIGURE_COMMAND "${CMAKE_CURRENT_BINARY_DIR}/libncurses5/src/project_curses/configure"
+	URL ftp://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
+	PREFIX=${CMAKE_CURRENT_BINARY_DIR}/libncurses5
+	#CONFIGURE_COMMAND ""
+	CONFIGURE_COMMAND "${CMAKE_CURRENT_BINARY_DIR}/libncurses5/src/project_curses/configure --prefix=${curses_PREFIX}"
 	BUILD_COMMAND make
 	INSTALL_COMMAND make install
-	PREFIX=${CMAKE_CURRENT_BINARY_DIR}/libncurses5
+	#INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/libncurses5
 )
 
 ExternalProject_Get_Property(project_curses install_dir)
