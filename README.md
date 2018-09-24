@@ -6,21 +6,7 @@
 ![tetris auto slow](img/tetris_auto_slow.gif)
 
 
-#GUIDE FOR LINUX
-
-```
-
-1. install ncurses library : sudo apt-get install libncurses5-dev
-
-2. if libncurses5-dev is not exists : sudo apt-cache search ncurses and install proper library
-
-3. compile : gcc -o tetris tetris.c -lcurses
-
-4. run : ./tetris
-
-```
-
-# GUIDE FOR MAC OS user
+# GUIDE FOR Linux & MAC OS user
 
 ```sh
 
@@ -31,3 +17,4 @@ make
 ./tetris_autoplay
 
 ```
+
