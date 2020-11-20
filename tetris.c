@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <termios.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <math.h>
 
 #define LINE 2
