@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <curses.h>
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -151,7 +150,6 @@ void moveBestPos(Pos bestPosition, char* nxt) {
 }
 
 int main(void) {
-    // int x = 0,y = 0,i = 0;
     char NXT = '\0';
     Pos bestPosition;
     initGame();
@@ -164,11 +162,8 @@ int main(void) {
         writeBlockOnBoard();
         drawInsideGame();
         eraseBlockOffBoard();
-        
-        
         indexCheck();
     }
-    endwin();
     printf("You Scored %d!\n", SCORE);
     return 0;
 }
@@ -199,12 +194,7 @@ void gotoXY(int x, int y) {
 }
 
 void initGame(void) {
-    initscr();
-    cbreak();
-    keypad(stdscr, TRUE);
-    noecho();
-    curs_set(0);
-    clear();
+    printf("\x1b[2J");
     srand((unsigned int)time(NULL));
     for(int x = 0; x < X_RIGHT_BOARDER - X_LEFT_BOARDER; x++) {
         BOARD_ARR[0][x] = LINE;
@@ -219,7 +209,6 @@ void initGame(void) {
 
 void drawBoarder(void) {
     for(int x=0, k=0; x < X_LEN; x++, k++) {
-    refresh();
         for(int y = 0; y < Y_LEN; y++) {
             if(BOARD_ARR[y][x] == LINE) {
                 gotoXY(k + x + X_LEFT_BOARDER, y + Y_TOP_BOARDER); printf("▤");
@@ -305,7 +294,6 @@ void drawInsideGame(void) {
                 printf("%s", COLOUR[BOARD_ARR[y][x] - 1]);
             }
         }
-        refresh();
     }
 }
 

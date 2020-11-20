@@ -6,15 +6,13 @@
 ![tetris auto slow](img/tetris_auto_slow.gif)
 
 
-# GUIDE FOR Linux & MAC OS user
+# BUILD & RUN
 
 ```sh
 
-cmake .
-
 make
 
-./tetris_autoplay
+./run
 
 ```
 
