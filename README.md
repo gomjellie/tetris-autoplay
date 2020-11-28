@@ -10,7 +10,7 @@
 
 ```sh
 
-make
+gcc tetris.c -o run
 
 ./run
 
